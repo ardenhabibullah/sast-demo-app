@@ -4,8 +4,7 @@ def greet(name):
     print(f"Hello, {name}!")
 
 def run_command(cmd):
-    # Vulnerable to command injection
-    subprocess.call(cmd, shell=True)
+    subprocess.call(cmd, shell=True)  # Kerentanannya di sini: command injection
 
 if __name__ == "__main__":
     name = input("Enter your name: ")
