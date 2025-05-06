@@ -13,7 +13,7 @@ pipeline {
         }
         stage('SAST Analysis') {
             steps {
-                sh 'bandit -f xml -o bandit-output.xml -r . || true'
+                sh '/usr/bin/bandit -f xml -o bandit-output.xml -r . || true'
                 recordIssues tools: [bandit(pattern: 'bandit-output.xml')]
             }
         }
